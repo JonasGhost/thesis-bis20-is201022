@@ -1,0 +1,23 @@
+% First pass of the paper reading process
+
+\begin{tikzpicture}
+\tikzset{
+    mynode/.style={rectangle, rounded corners, draw=black},
+    myarr/.style={->, thick}
+}
+
+\node[mynode] (learn) {Wissen aneignen};
+\node[mynode, below = of learn] (choose) {Thema wählen};
+\node[mynode, right= of choose] (suggest) {Thema vorschlagen};
+\node[mynode, below = of choose] (research) {Analyse des Themenbereichs};
+\node[mynode, below = of research] (write) {Survey/Reviewpaper schreiben};
+\node[mynode, below = of write] (present) {Überblick und Forschungsfrage präsentieren};
+
+\draw[myarr] (learn) -- (choose);
+\draw[myarr] (learn) -- (suggest);
+\draw[myarr] (choose) -- (research);
+\draw[myarr] (suggest) -- (research);
+\draw[myarr] (research) -- (write);
+\draw[myarr] (write) -- (present);
+
+\end{tikzpicture}

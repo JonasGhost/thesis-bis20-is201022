@@ -1,0 +1,475 @@
+\documentclass[a4paper,11pt,twoside,headsepline,footsepline]{scrbook}
+
+% ENCODING
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% FONTS
+\usepackage{helvet,times}
+\usepackage{textcomp}
+% LANGUAGES
+\usepackage[ngerman,american]{babel}
+%\usepackage[fixlanguage]{babelbib}
+
+
+% IF, CONDITIONS
+\usepackage{xifthen}
+
+
+
+
+% GEOMETRY, PAGE LAYOUT
+% Add showframe to the geometry package to see the page layout
+\usepackage[inner=2.5cm,outer=2cm]{geometry}
+% baselineskip könnte auch 47-50 sein
+\setlength{\textheight}{48\baselineskip}
+\setlength{\headheight}{8mm}
+\setlength{\footskip}{12mm}
+\setlength{\parindent}{0mm}
+\renewcommand{\baselinestretch}{1.5}
+\setlength{\marginparwidth}{8mm}
+\setlength{\marginparsep}{2mm}
+
+
+% HEADER, FOOTER
+\usepackage[automark]{scrlayer-scrpage}
+% Prevent the fancyhdr package
+\PreventPackageFromLoading{fancyhdr}
+\DeclarePageStyleAlias{fancy}{scrheadings}
+% Change the font size
+%\addtokomafont{pageheadfoot}{\slshape}
+%\addtokomafont{pagehead}{\tiny}
+%\addtokomafont{pagefoot}{\small}
+% Change the content of the header and footer
+\ohead{\leftmark}
+%\ihead{}
+\ofoot{\pagemark}
+%\cfoot{\docauthor}
+\pagestyle{scrheadings}
+
+
+% URLS, HYPERREFS
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+
+
+% FOOTNOTES
+\usepackage{footnote}
+
+
+% GRAPHICS, PICTURES, FIGURES
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{positioning,shapes,shadows,arrows,fit,matrix}
+%For generating tex files from the dot graphs
+\usepackage{dot2texi}
+\usepackage{adjustbox}
+% subgraphics, subpictures, subcaptions
+\usepackage{subcaption}
+% Smart diagram - Look at: http://texdoc.net/texmf-dist/doc/latex/smartdiagram/smartdiagram.pdf
+\usepackage{smartdiagram}
+
+
+% COLORS
+\usepackage{color}
+
+
+% TOC = TABLE OF CONTENTS
+\usepackage{tocloft}
+% Make dots for parts, chapter and sections in the ToC.
+\renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}} % for parts
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}} % for chapters
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % for sections
+
+% GLOSSARY
+\usepackage[automake,toc,nonumberlist,acronym,nomain,nopostdot]{glossaries}
+%\GlsSetQuote{+}
+\glsdisablehyper
+\makeglossaries
+
+
+% QUOTES, QUOTATIONS (at the beginning of a chapter)
+\usepackage{csquotes}
+\usepackage{epigraph}
+%\epigraphfontsize{\small\itshape}
+\setlength\epigraphwidth{0.80\textwidth}
+\renewcommand{\epigraphflush}{center}
+\setlength\epigraphrule{0pt}
+
+% CITE, CITING, CITATIONS, BIBLIOGRAPHY
+%\usepackage{cite}
+%\usepackage{natbib}
+% maxnames,minnames ... If there are more than maxnames, the list of authors is truncated to minnames
+% maxcitenames ... list of authors in the body (citeauthor)
+% maxbibnames ... list of authors in the bibliography
+\usepackage[backend=biber,style=ieee, minbibnames=99,maxbibnames=99,mincitenames=1,maxcitenames=1, firstinits=false]{biblatex}
+\addbibresource{user_data/0_X_literature.bib}
+% Change the format of \citetitle (no quotes, no grqq)
+\DeclareFieldFormat*{citetitle}{#1}
+
+
+% STACKON, STACKS - words above/below words, for crossing out and correcting words
+\usepackage{stackengine}
+% soul command - strike through, strike out, cross out
+\usepackage{soul}
+
+
+% WATERMARKS, Add watermark - Preview
+%\usepackage{draftwatermark}
+%\SetWatermarkText{Preview}
+%\SetWatermarkLightness{0.97}
+%\SetWatermarkScale{1}
+
+
+% ITEMIZE, ITEMS, ENUMERATE - change seperation/space between items
+\usepackage{enumitem}
+%\setlength\itemsep{0em}
+\setlist{nosep}
+
+\usepackage{scrhack}
+
+% LISTINGS - Source code listings
+\usepackage{listings}
+% C STYLE
+\lstdefinestyle{cListing}{
+	breaklines=true,
+	language=C,
+	showspaces=false,               % show spaces adding particular underscores
+	showstringspaces=false,         % underline spaces within strings
+	showtabs=false,                 % show tabs within strings adding particular underscores
+	% Numbers
+	numbers=left,
+	stepnumber=1,
+	numbersep=5pt,
+	captionpos=b,
+	tabsize=4,
+	frame=single,
+	numberstyle=\footnotesize\color{gray},
+	basicstyle=\linespread{0.9}\small,	%linespread decreases the spacing between lines
+	commentstyle=\color{gray},
+	escapeinside={},	% Escaping
+	% Add or delete keywords that will have a different style
+	morekeywords={},
+	deletekeywords={},
+}
+% PYTHON STYLE
+\lstdefinestyle{pythonListing}{
+	breaklines=true,
+	language=python,
+	showspaces=false,               % show spaces adding particular underscores
+	showstringspaces=false,         % underline spaces within strings
+	showtabs=false,                 % show tabs within strings adding particular underscores
+	% Numbers
+	numbers=left,
+	stepnumber=1,
+	numbersep=5pt,
+	captionpos=b,
+	tabsize=4,
+	frame=single,
+	numberstyle=\footnotesize\color{gray},
+	basicstyle=\linespread{0.9}\small,	%linespread decreases the spacing between lines
+	commentstyle=\color{gray},
+	escapeinside={},	% Escaping
+	% Add or delete keywords that will have a different style
+	morekeywords={},
+	deletekeywords={},
+}
+% BASH STYLE
+\lstdefinestyle{bashListing}{
+	breaklines=true,
+	language=bash,
+	showspaces=false,               % show spaces adding particular underscores
+	showstringspaces=false,         % underline spaces within strings
+	showtabs=false,                 % show tabs within strings adding particular underscores
+	% Numbers
+	numbers=left,
+	stepnumber=1,
+	numbersep=5pt,
+	captionpos=b,
+	tabsize=4,
+	frame=single,
+	numberstyle=\footnotesize\color{gray},
+	basicstyle=\linespread{0.9}\small,	%linespread decreases the spacing between lines
+	commentstyle=\color{gray},
+	escapeinside={},	% Escaping
+	% Add or delete keywords that will have a different style
+	morekeywords={},
+	deletekeywords={},
+}
+% LLVM IR LANGUAGE + STYLE
+\lstdefinelanguage{llvmir}{
+	morekeywords={align, alloca, define, double, fmul, i32, load, ret, shl, store, sub},
+	sensitive=false,
+}
+\lstdefinestyle{llvmirListing}{
+	breaklines=true,
+	language=llvmir,
+	showspaces=false,               % show spaces adding particular underscores
+	showstringspaces=false,         % underline spaces within strings
+	showtabs=false,                 % show tabs within strings adding particular underscores
+	% Numbers
+	numbers=left,
+	stepnumber=1,
+	numbersep=5pt,
+	captionpos=b,
+	tabsize=4,
+	frame=single,
+	numberstyle=\footnotesize\color{gray},
+	basicstyle=\linespread{0.9}\small,	%linespread decreases the spacing between lines
+	commentstyle=\color{gray},
+	escapeinside={},	% Escaping
+	% Add or delete keywords that will have a different style
+	morekeywords={},
+	deletekeywords={},
+}
+% MAKE/MAKEFILE STYLE
+\lstdefinestyle{makeListing}{
+	breaklines=true,
+	language=make,
+	showspaces=false,               % show spaces adding particular underscores
+	showstringspaces=false,         % underline spaces within strings
+	showtabs=false,                 % show tabs within strings adding particular underscores
+	% Numbers
+	numbers=left,
+	stepnumber=1,
+	numbersep=5pt,
+	captionpos=b,
+	tabsize=4,
+	frame=single,
+	numberstyle=\footnotesize\color{gray},
+	basicstyle=\linespread{0.9}\small,	%linespread decreases the spacing between lines
+	commentstyle=\color{gray},
+	escapeinside={},	% Escaping
+	% Add or delete keywords that will have a different style
+	morekeywords={},
+	deletekeywords={},
+}
+% BIBTEX LANGUAGE + STYLE
+\lstdefinelanguage{bibtex}{
+	morekeywords={address, annote, author, booktitle, chapter, crossref, doi, edition, editor, howpublished, institution, issn, journal, key, month, note, number, organization, pages, publisher, school, series, title, type, url, volume, year, @article, @book, @booklet, @conference, @inbook, @incollection, @inproceedings, @manual, @mastersthesis, @misc, @phdthesis, @proceedings, @techreport, @unpublished},
+	sensitive=false,
+}
+\lstdefinestyle{bibtexListing}{
+	breaklines=true,
+	language=bibtex,
+	showspaces=false,               % show spaces adding particular underscores
+	showstringspaces=false,         % underline spaces within strings
+	showtabs=false,                 % show tabs within strings adding particular underscores
+	% Numbers
+	numbers=left,
+	stepnumber=1,
+	numbersep=5pt,
+	captionpos=b,
+	tabsize=4,
+	frame=single,
+	numberstyle=\footnotesize\color{gray},
+	basicstyle=\linespread{0.9}\small,	%linespread decreases the spacing between lines
+	commentstyle=\color{gray},
+}
+% ENDNOTE LANGUAGE + STYLE
+\lstdefinelanguage{endnote}{
+	keywords={0,A,D,T,9,I},
+	sensitive=true,
+}
+\lstdefinestyle{endnoteListing}{
+	breaklines=true,
+	language=endnote,
+	showspaces=false,               % show spaces adding particular underscores
+	showstringspaces=false,         % underline spaces within strings
+	showtabs=false,                 % show tabs within strings adding particular underscores
+	% Numbers
+	numbers=left,
+	stepnumber=1,
+	numbersep=5pt,
+	captionpos=b,
+	tabsize=4,
+	frame=single,
+	numberstyle=\footnotesize\color{gray},
+	basicstyle=\linespread{0.9}\small,	%linespread decreases the spacing between lines
+	commentstyle=\color{gray},
+}
+
+% Dockerfile LANGUAGE + STYLE
+\lstdefinelanguage{dockerfile}{
+	keywords={COPY,ENTRYPOINT,FROM,MAINTAINER,RUN,VOLUME},
+	sensitive=true,
+	morecomment=[l]{\#},
+}
+\lstdefinestyle{dockerfileListing}{
+	breaklines=true,
+	language=dockerfile,
+	showspaces=false,               % show spaces adding particular underscores
+	showstringspaces=false,         % underline spaces within strings
+	showtabs=false,                 % show tabs within strings adding particular underscores
+	% Numbers
+	numbers=left,
+	stepnumber=1,
+	numbersep=5pt,
+	captionpos=b,
+	tabsize=4,
+	frame=single,
+	numberstyle=\footnotesize\color{gray},
+	basicstyle=\linespread{0.9}\small,	%linespread decreases the spacing between lines
+	commentstyle=\color{gray},
+}
+
+
+% TABLES
+% HLINES, HORIZONTAL LINES - in tabulars and arrays
+\usepackage{hhline}
+\usepackage{supertabular}
+% Multiple rows
+\usepackage{multirow}
+% array package - for paragraph colum alignment in the middle and bottom
+\usepackage{array}
+
+% Multiple columns
+\usepackage{multicol}
+
+
+% SETTINGS and DEFINITIONS
+% Include definitions and settings
+\input{static/defs}
+\input{user_data/0_0_settings}
+% Make additional definitions and settings
+\title{\doctitle}
+\author{\docauthor}
+\thesistype{\docthesistype}
+
+
+% HYPERSETUP
+\hypersetup{
+   pdftitle={\doctitle},
+   pdfauthor={\docauthor},
+   pdfsubject={\docthesistype},
+   pdflang={eng},
+%   bookmarks=true,
+   bookmarksnumbered=true,
+   breaklinks=true
+}
+
+
+% COLOR DEFINITIONS
+\definecolor{darkblue}{rgb}{0,0.08,0.45}
+
+
+% RENEW COMMANDS
+% TODO: uncomment the next command to remove the marginpar
+%\renewcommand{\marginpar}[2]{}
+
+
+% ACRONYMS, TERMS
+% General acronyms
+\newacronym{it}{IT}{Information Technology}
+\newacronym{dry}{DRY}{Don't Repeat Yourself}
+\newacronym{os}{OS}{Operating System}
+\newacronym{ide}{IDE}{Integrated Development Environment}
+\newacronym{poc}{PoC}{Proof of Concept}
+\newacronym{api}{API}{Application Programming Interface}
+\newacronym{gui}{GUI}{Graphical User Interface}
+\newacronym{io}{I/O}{Input/Output}
+\newacronym{cots}{COTS}{Commercial-Of-The-Shelf}
+\newacronym{gcc}{GCC}{GNU Compiler Collection}
+\newacronym{gnu}{GNU}{GNU's Not Unix}
+
+\newacronym{json}{JSON}{JavaScript Object Notation}
+\newacronym{ascii}{ASCII}{American Standard Code for Information Interchange}
+
+\newglossaryentry{malware}
+{
+	name=Malware,
+	description={Malicious computer software}
+}
+\newglossaryentry{ransomware}
+{
+	name=Ransomware,
+	description={Malware, preventing user from accessing system or files, demanding ransom money}
+}
+
+\newacronym{oss}{OSS}{Open Source Software}
+\newacronym{ctf}{CTF}{Capture The Flag}
+
+
+\newacronym{aes}{AES}{Advanced Encryption Standard}
+\newacronym{des}{DES}{Data Encryption Standard}
+
+
+% TITLEPAGE, FRONTPAGE
+\input{static/titlepage}
+
+% BEGIN DOCUMENT
+\begin{document}
+\lang
+
+\frontmatter
+
+%\layout
+
+\maketitle
+
+\clearpage
+
+\input{static/0_erklaerung}
+%\input{static/0_declaration}
+
+\clearpage
+
+\input{user_data/0_1_abstract_de}
+
+% USE THE BEGINGROUP to let the chapters not start new pages
+%\begingroup
+%\renewcommand{\cleardoublepage}{}
+%\renewcommand{\clearpage}{}
+\input{user_data/0_2_abstract_en}
+%\endgroup
+
+\clearpage
+
+\lang
+
+\tableofcontents
+
+\clearpage
+
+\mainmatter
+
+\input{user_data/1_introduction}
+\input{user_data/2_basics}
+\input{user_data/3_relatedwork}
+\input{user_data/4_approach}
+\input{user_data/9_conclusion}
+
+% If there is an appendix like the setup add the following lines
+%\appendix
+%\input{user_data/B_setup}
+
+\clearpage
+\listoffigures
+\addcontentsline{toc}{chapter}{\listfigurename}
+
+\clearpage
+\listoftables
+\addcontentsline{toc}{chapter}{\listtablename}
+
+%\clearpage
+\lstlistoflistings
+
+% To refresh the glossary:
+% delete the temporary/output files and run
+% makeglossaries % In texmaker also see User -> User Commands
+\clearpage
+\glsaddall
+\ifisGerman
+    \printglossary[style=super,title={Glossar},toctitle={Glossar},type=\acronymtype]
+\else
+    \printglossary[style=super,title={Glossary},toctitle={Glossary},type=\acronymtype]
+\fi
+
+%\bibliographystyle{static/IEEEtran}
+%\bibliography{user_data/0_3_literature}
+%\addcontentsline{toc}{chapter}{\refname}
+\printbibliography[heading=bibintoc]
+
+%\backmatter
+
+\end{document}
+

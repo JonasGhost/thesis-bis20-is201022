@@ -1,0 +1,85 @@
+\ifisGerman
+    \chapter{Stand der Forschung}
+\else
+    \chapter{Related Work}
+\fi
+\label{sec:relwork}
+
+In \autoref{sec:relwork} ist der \nameref{sec:relwork} zu finden.
+
+
+\autoref{tab:passes_paperreading} shows hot to read \gls{it} papers.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|}
+    \hline
+    \textbf{pass} & \textbf{content to read} \\ \hline
+    \multirow{3}{*}{first} & title, abstract, introduction \\ \cline{2-2}
+                           & section and sub-section header \\ \cline{2-2}
+                           & conclusion \\ \cline{2-2}
+                           & references \\ \hline
+    second & content, ignoring details (proofs,...) \\ \hline
+    third & content in detail (re-implement paper) \\ \hline
+\end{tabular}
+\caption{Passes their content for reading a paper}
+\label{tab:passes_paperreading}
+\end{table}
+
+
+In \autoref{fig:fhlogo} kann das FH-Logo bestaunt werden.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=0.2]{gfx/fh_logo}
+    \caption{FH-Logo}
+    \label{fig:fhlogo}
+\end{figure}
+
+
+Bilder können auch mit PGF und TikZ gezeichnet werden.
+Beispiele hierfür sind \autoref{fig:paperreading} und \autoref{fig:flow_mwissa}.
+
+\begin{figure}[ht]
+    \centering
+    \input{gfx/pic_readingpapers}
+    \caption{Steps of the first pass when reading a research paper}
+    \label{fig:paperreading}
+\end{figure}
+
+
+\begin{figure}[ht]
+    \centering
+    \input{gfx/pic_flowmwissa}
+    \caption{Flussdiagram BAK1}
+    \label{fig:flow_mwissa}
+\end{figure}
+
+Infos zu PGF/TikZ sind auf den folgenden Webseiten verfügbar:
+\begin{itemize}
+    \item \url{https://en.wikibooks.org/wiki/LaTeX/PGF/TikZ}
+    \item \url{http://www.texample.net/tikz/examples/}
+\end{itemize}
+
+
+
+
+Das Halteproblem~\cite{turing_halting_prob} von \citeauthor{turing_halting_prob} kann im .bib file wie in \autoref{lstBibtex} gezeigt hinzugefügt werden und mit cite zitiert werden.
+
+
+
+\begin{lstlisting}[style=bibtexListing,label=lstBibtex,caption={BibTeX}]
+@article{turing_halting_prob,
+    author = {Turing, A. M.},
+    title = {On Computable Numbers, with an Application to the Entscheidungsproblem},
+    journal = {Proceedings of the London Mathematical Society},
+    volume = {s2-42},
+    number = {1},
+    publisher = {Oxford University Press},
+    issn = {1460-244X},
+    url = {http://dx.doi.org/10.1112/plms/s2-42.1.230},
+    doi = {10.1112/plms/s2-42.1.230},
+    pages = {230--265},
+    year = {1937}
+}
+\end{lstlisting}
