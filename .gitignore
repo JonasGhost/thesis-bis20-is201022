@@ -1,0 +1,31 @@
+
+# Latex build files #
+*.acn
+*.acr
+*.alg
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.ist
+*.lof
+*.log
+*.lol
+*.lot
+*.out
+*.run.xml
+*.toc
+
+# Temporary files #
+*~
+*.swp
+*.swo
+
+# OS generated files #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
