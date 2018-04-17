@@ -1,5 +1,7 @@
 # README - English
 
+This repository is for managing the FH Latex template for student theses.
+
 Important files and directories:
 - Directory gfx - pictures
 - Directory out - directory for building the PDF (also contains the temporary build files)
@@ -15,6 +17,8 @@ Settings:
 
 
 # LIESMICH - Deutsch
+
+Dieses Repositorium dient der Verwaltung der Latex-Vorlage für Studierendenabschlussarbeiten.
 
 Die folgende Liste stellt eine kurze Erklärung der wichtigen Ordner und Dateien dar.
 - Ordner gfx - Bilder
