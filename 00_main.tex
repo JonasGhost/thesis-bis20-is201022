@@ -31,7 +31,7 @@
 
 
 % HEADER, FOOTER
-\usepackage[automark]{scrlayer-scrpage}
+\usepackage[automark,singlespacing=true]{scrlayer-scrpage}
 % Prevent the fancyhdr package
 \PreventPackageFromLoading{fancyhdr}
 \DeclarePageStyleAlias{fancy}{scrheadings}
@@ -101,7 +101,7 @@
 % maxnames,minnames ... If there are more than maxnames, the list of authors is truncated to minnames
 % maxcitenames ... list of authors in the body (citeauthor)
 % maxbibnames ... list of authors in the bibliography
-\usepackage[backend=biber,style=ieee, minbibnames=99,maxbibnames=99,mincitenames=1,maxcitenames=1, firstinits=false]{biblatex}
+\usepackage[backend=biber,style=ieee, minbibnames=99,maxbibnames=99,mincitenames=1,maxcitenames=1, giveninits=false]{biblatex}
 \addbibresource{user_data/0_X_literature.bib}
 % Change the format of \citetitle (no quotes, no grqq)
 \DeclareFieldFormat*{citetitle}{#1}
