@@ -1,18 +1,19 @@
-\ifisGerman
-    \chapter{Conclusio}
-\else
-    \chapter{Conclusion}
-\fi
-\label{sec:conclusion}
+\iflanguage{ngerman}{
+    \chapter{Conclusio}\label{sec:conclusion}
+}{}
+\iflanguage{american}{
+    \chapter{Conclusion}\label{sec:conclusion}
+}{}
 
 TODO: Write conclusion...
 
 
-\ifisGerman
+\iflanguage{ngerman}{
     \section{Weiterführende Arbeiten}
-\else
+}{}
+\iflanguage{american}{
     \section{Future Work}
-\fi
+}{}
 
 TODO: Write future work...
 

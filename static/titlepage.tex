@@ -1,129 +1,122 @@
  
 \definecolor{tuerkis}{rgb}{0.0,0.7,0.7}
-\definecolor{intensive-turquoise}{rgb}{0, 0.57, 0.68}
-\definecolor{logotext}{rgb}{1, 1, 1}
+\definecolor{intensive-turquoise}{rgb}{0,0.31,0.59}
 
 \makeatletter
 \renewcommand{\maketitle}{\begin{titlepage}%
-{\sffamily\thispagestyle{empty}
+{
+    \sffamily\thispagestyle{empty}
 
-{\vspace*{-25mm}
-	\hfill\makebox[0mm]{\hspace{-50mm}\setlength{\unitlength}{0.25mm}\input{static/fh_logo_ohnetext}}
-    %\fontencoding{T1}\fontfamily{phv}\selectfont
-    \makebox[0mm]{\hspace{-14mm}\textcolor{logotext}{\raisebox{30mm}{\Large\bfseries\textsl{I}fh\textsl{III}}}}
-    \makebox[0mm]{\hspace{-5mm}\textcolor{logotext}{\raisebox{25mm}{\bfseries st.p\"{o}lten}}}
-}
+    {
+        \vspace*{-35mm}
+        \makebox[0mm]{%
+            \hspace{16cm}{%
+                \includegraphics[scale=0.95, trim=0 2cm 0 0, clip]{static/header_dis_fhstp.jpg}
+            }
+        }
+    }
 
+    \begin{center}\bfseries\huge\expandafter{\@thesisTitle{}}\end{center}
+    \vspace*{-0.5cm}
+    \begin{center}\bfseries\Large\expandafter{\@thesisSubtitle{}}\end{center}%
+    \vspace*{0.5cm}%
+    \begin{center}\LARGE{\@thesisType{}}\end{center}%
+    \vspace*{0.2cm}%
 
-\vspace*{-4cm}\textcolor{tuerkis}{\LARGE{\@study}}
+    \iflanguage{ngerman}{
+        \begin{center}\large{zur Erlangung des akademischen Grades}\end{center}%
+    }{}
+    \iflanguage{american}{
+        \begin{center}\large{For attainment of the academic degree of}\end{center}%
+    }{}
 
-\vspace{3cm}
+    \begin{center}\LARGE{\@thesisDegree{}}\end{center}%
+    \vspace{0.2mm}%
 
-\begin{center}\bfseries\huge\expandafter{\textcolor{intensive-turquoise}{\@title}}\end{center}
-\vspace*{-0.5cm}
-\begin{center}\bfseries\Large\expandafter{\textcolor{intensive-turquoise}{\@subtitle}}\end{center}%
-\vspace*{0cm}%
-\begin{center}\LARGE{\@thesistype}\end{center}%
-\vspace*{0cm}%
+    \iflanguage{ngerman}{
+        \begin{center}\large{eingereicht von}\end{center}%
+    }{}
+    \iflanguage{american}{
+        \begin{center}\large{submitted by}\end{center}%
+    }{}
 
-\ifisGerman
-	\begin{center}\large{zur Erlangung des akademischen Grades}\end{center}%
-\else
-	\begin{center}\large{For attainment of the academic degree of}\end{center}%
-\fi
-%\vspace{.1cm}%
-\ifisBakk
-    \begin{center}\LARGE{Bachelor of Science in Engineering (BSc)}\end{center}%
-\else
-    \begin{center}\LARGE{Diplom-Ingenieur/in}\end{center}%
-\fi
-\vspace{-0.5mm}%
+    \vspace*{0.1cm}%
+    \begin{center}\LARGE{\@thesisAuthor{}\\\@thesisStudid{}}\end{center}
 
-\ifisGerman
-\begin{center}\large{eingereicht von}\end{center}%
-\else
-\begin{center}\large{submitted by}\end{center}%
-\fi
+    \footnotesize
+    \vspace*{.5cm}
 
-\vspace*{-0.5cm}%
-\begin{center}\LARGE{\@author\\\@matnr}\end{center}
+    \iflanguage{ngerman}{
+        \begin{flushleft}
+            im Rahmen des \\ 
+            Studienganges \@thesisStudy{} an der Fachhochschule St.\ P\"olten
+        \end{flushleft}
+    }{}
+    \iflanguage{american}{
+        \begin{flushleft}
+            in the \\ 
+            University Course \@thesisStudy{} at St.\ P\"olten University of Applied Sciences
+        \end{flushleft}
+    }{}
 
-\footnotesize
-\vspace*{.5cm}
+    \vspace{0.3cm}
 
-\ifisGerman
-\begin{flushleft}
-	im Rahmen des \\ 
-	Studienganges {\@study} an der Fachhochschule St. P\"olten
-\end{flushleft}
-\else
-\begin{flushleft}
-	in the \\ 
-	University Course {\@study} at St. P\"olten University of Applied Sciences
-\end{flushleft}
-\fi
+    \iflanguage{ngerman}{
+        \begin{flushleft}
+            Betreuung \\
+            Betreuer/in: \@thesisSupervisor{} \\
+            Mitwirkung: \@thesisAssistance{}
+            %\small{der \institutsuni} \\
+        \end{flushleft}
+    }{}
+    \iflanguage{american}{
+        \begin{flushleft}
+            Supervision \\
+            Advisor: \@thesisSupervisor{} \\
+            Assistance: \@thesisAssistance{}
+            %\small{der \institutsuni} \\
+        \end{flushleft}
+    }{}
 
-\vspace{0.3cm}
+    \vspace*{0.8cm}
 
-\ifisGerman
-\begin{flushleft}
-	Betreuung \\
-	Betreuer/in: \@supervisor \\
-	Mitwirkung: \@assistance
-	%\small{der \institutsuni} \\
-\end{flushleft}
-\else
-\begin{flushleft}
-The interior of this work has been composed in \LaTeX.
-\end{flushleft}
-\begin{flushleft}
-	Supervision \\
-	Advisor: \@supervisor \\
-	Assistance: \@assistance
-	%\small{der \institutsuni} \\
-\end{flushleft}
-\fi
-
-\vspace*{0.5cm}
-
-{\centering
-	\ifisGerman
-	\begin{tabular}{ccc}
-		St. P\"olten, \today & \underline{\hspace*{5cm}} & \underline{\hspace*{5cm}} \\
-		& (Unterschrift Verfasser/in) & (Unterschrift Betreuer/in) \\
-	\end{tabular}
-	\else
-	\begin{tabular}{ccc}
-		St. P\"olten, \today & \underline{\hspace*{5cm}} & \underline{\hspace*{5cm}} \\
-		& (Signature author) & (Signature advisor) \\
-	\end{tabular}
-	\fi
-}
-
-\vspace{.5cm}
-
-\enlargethispage{3\baselineskip}
-
-\vfill
-
-%\vspace*{2\baselineskip}
-
-{\centering
-	\sffamily\tiny{\mbox{%
-		\ifisGerman
-		Fachhochschule St. P\"olten GmbH,  Campus-Platz 1, A-3100 St. P\"olten,%
-		T: +43 (2742) 313 228, F: +43 (2742) 313 228-339, E:office@fhstp.ac.at, I:www.fhstp.ac.at%
-		\else
-		St. P\"olten University of Applied Sciences,  Campus-Platz 1, A-3100 St. P\"olten,%
-		T: +43 (2742) 313 228, F: +43 (2742) 313 228-339, E:office@fhstp.ac.at, I:www.fhstp.ac.at%
-		\fi
-	}}
-}
+    {
+        \centering
+        \iflanguage{ngerman}{
+            \begin{tabular}{ccc}
+                St.\ P\"olten, \today & \underline{\hspace*{5cm}} & \underline{\hspace*{5cm}} \\
+                & (Unterschrift Verfasser/in) & (Unterschrift Betreuer/in) \\
+            \end{tabular}
+        }{}
+        \iflanguage{american}{
+            \begin{tabular}{ccc}
+                St.\ P\"olten, \today & \underline{\hspace*{5cm}} & \underline{\hspace*{5cm}} \\
+                & (Signature author) & (Signature advisor) \\
+            \end{tabular}
+        }{}
+    }
 
 
-%\newpage
-}
-\end{titlepage}
+    \enlargethispage{2\baselineskip}
+
+    \vfill
+
+
+    {
+        \centering
+        \sffamily\tiny{\mbox{%
+            \iflanguage{ngerman}{
+                Fachhochschule St.\ P\"olten GmbH,  Campus-Platz 1, A-3100 St.\ P\"olten,%
+                T:\ +43 (2742) 313 228, F:\ +43 (2742) 313 228-339, E:\ office@fhstp.ac.at, I:\ www.fhstp.ac.at%
+            }{}
+            \iflanguage{american}{
+                St.\ P\"olten University of Applied Sciences,  Campus-Platz 1, A-3100 St.\ P\"olten,%
+                T:\ +43 (2742) 313 228, F:\ +43 (2742) 313 228-339, E:\ office@fhstp.ac.at, I:\ www.fhstp.ac.at%
+            }{}
+        }}
+    }
+
+}\end{titlepage}
 }
 
 \makeatother

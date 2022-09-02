@@ -1,16 +1,13 @@
 \makeatletter
-\def\study#1{\gdef\@study{#1}}
-\def\thesistype#1{\gdef\@thesistype{#1}}
-\def\matnr#1{\gdef\@matnr{#1}}
-\def\assistance#1{\gdef\@assistance{#1}}
-\def\supervisor#1{\gdef\@supervisor{#1}}
-\def\subtitle#1{\gdef\@subtitle{#1}}
+\def\setAuthor#1{\gdef\@thesisAuthor{#1}}
+\def\setStudy#1{\gdef\@thesisStudy{#1}}
+\def\setThesisType#1{\gdef\@thesisType{#1}}
+\def\setDegree#1{\gdef\@thesisDegree{#1}}
+\def\setStudid#1{\gdef\@thesisStudid{#1}}
+\def\setAssistance#1{\gdef\@thesisAssistance{#1}}
+\def\setSupervisor#1{\gdef\@thesisSupervisor{#1}}
+\def\setTitle#1{\gdef\@thesisTitle{#1}}
+\def\setSubtitle#1{\gdef\@thesisSubtitle{#1}}
 
-\def\@assistance{}
-\def\@supervisor{}
-\def\@subtitle{Untertitel}
-\def\@study{Information Security}
-\def\@thesistype{Diploma Thesis}
-\def\@matnr{is151511}
+\newcommand{\alinie}{\begin{picture}(1,1)\linethickness{0.08pt}\line(1,0){1}\end{picture}}
 \makeatother
-

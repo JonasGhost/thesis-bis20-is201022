@@ -2,60 +2,95 @@
 % Einstellungen zum Dokument
 % Settings for the document
 
-\xdef\docauthor{AUTHOR}
-\matnr{isXXXXXX}
-\supervisor{Dipl.-Ing. Dr. Sebastian Schrittwieser, Bakk.}
-\supervisor{FH-Prof. Mag. Dr. Simon Tjoa}
-\supervisor{Dipl.-Ing. Peter Kieseberg}
-\supervisor{Dipl.-Ing. Dipl.-Ing. Christoph Lang-Muhr, BSc}
-\supervisor{Dipl.-Ing. Daniel Haslinger, BSc}
-\supervisor{Dipl.-Ing. Dr. Martin Pirker, Bakk.}
-\supervisor{FH-Prof. Univ.-Doz. Dipl.-Ing. Dr. Ernst Piller}
-\assistance{Damjan Buhov, MSc}
-\assistance{-}
-\xdef\doctitle{TITEL}
-\subtitle{SUBTITEL}
+% Full name of the author
+\setAuthor{AUTHOR}
+% Student ID, Matrikelnummer
+\setStudid{XXXXXXXX}
+% Name of the thesis
+\setTitle{TITEL}
+% Subtitle of the thesis
+\setSubtitle{SUBTITEL}
 
-% Folgendes auf TRUE setzten, wenn es sich um eine BAK Arbeit handelt.
-% Set this to TRUE if it is a BAK thesis
-\newif\ifisBakk
-\isBakkfalse
-\isBakktrue
+% Supervisor
+% A
+\setSupervisor{FH-Prof.\ Dr.\ Alexander Adrowitzer}
+\setSupervisor{Dip.-Ing.\ Dipl.-Wirt.-Int.\ Dr.\ Bernward Asprion, BSc}
+% B
+\setSupervisor{FH-Prof.\ Prof.\ (hc.c) Dipl.-Ing. (FH) Thomas Brandstetter MBA}
+% D
+\setSupervisor{Dipl.-Ing.\ Tobias Dam, BSc}
+\setSupervisor{Thomas Delissen, MSc}
+% E
+\setSupervisor{Dipl.-Ing.\ Oliver Eigner, BSc}
+\setSupervisor{Dipl.-Ing.\ Sebastian Eresheim, BSc}
+% G
+\setSupervisor{FH-Prof.\ Dipl.-Ing.\ Herfried Geyer}
+\setSupervisor{Dipl.-Ing.\ Melisa Grafi\'{c}, BSc}
+% H
+\setSupervisor{Dipl.-Ing.\ Daniel Haslinger, BSc}
+% K
+\setSupervisor{Laura Kaltenbrunner, BA MA}
+\setSupervisor{FH-Prof.\ Dipl.-Ing.\ Peter Kieseberg}
+\setSupervisor{Dipl.-Ing.\ Dr.\ Lukas Daniel Klausner, BSc}
+\setSupervisor{Dipl.-Ing.\ Patrick Kochberger, BSc}
+\setSupervisor{Dipl.-Ing.\ Lukas König, BSc}
+% L
+\setSupervisor{FH-Prof.\ Dipl.-Ing.\ Dipl.-Ing.\ Christoph Lang-Muhr, BSc}
+\setSupervisor{FH-Prof.\ Dipl.-Ing.\ Dr.\ Robert Luh, BSc}
+% M
+\setSupervisor{Dipl.-Ing.\ Stefan Machherndl, BSc}
+% N
+\setSupervisor{Dipl.-Ing.\ Dr.\ Sebastian Neumaier, BSc}
+% O
+\setSupervisor{Dipl.-Ing.\ Gabor Österreicher, BSc}
+% P
+\setSupervisor{FH-Prof.\ Univ.-Doz.\ Dipl.-Ing.\ Dr.\ Ernst Piller}
+\setSupervisor{FH-Prof.\ Dipl.-Ing.\ Dr.\ Martin Pirker, Bakk.}
+\setSupervisor{Dr.\ Torsten Priebe}
+% R
+\setSupervisor{Dipl.-Ing.\ Dr.\ Henri Ruotsalainen}
+% S
+\setSupervisor{Dipl.-Ing.\ Hubert Schölnast, BSc}
+% T
+\setSupervisor{FH-Prof.\ Mag.\ Dr.\ Simon Tjoa}
+\setSupervisor{FH-Prof.\ Dipl.\ Ing.\ Mag.\ Marlies Temper}
+% DEFAULT Template
+\setSupervisor{TITLE FIRST NAME FAMILY NAME}
 
-% Folgendes auf TRUE setzen, wenn das Dokument in Deutsch verfasst wird.
-% Set this to TRUE if the document is written in German.
-\newif\ifisGerman
-\isGermantrue
-\isGermanfalse
-
-\ifisGerman
-    \ifisBakk
-        \xdef\docthesistype{Bachelorarbeit}
-    \else
-        \xdef\docthesistype{Diplomarbeit}
-    \fi
-    \newcommand{\lang}{\selectlanguage{ngerman}}
-\else
-    \ifisBakk
-        \xdef\docthesistype{Bachelor thesis}
-    \else
-        \xdef\docthesistype{Diploma Thesis}
-    \fi
-    \newcommand{\lang}{\selectlanguage{american}}
-\fi
+% No assistance
+\setAssistance{-}
 
 
-\ifisBakk
-    \study{IT Security}
-\else
-    \study{Information Security}
-\fi
+% Set your study here!
+% Data Science
+\setStudy{Data Intelligence}
+\setStudy{Data Science and Business Analytics}
+% IT Sec
+\setStudy{Applied Research and Innovation in Computer Science}
+\setStudy{Cyber Security and Resilience}
+\setStudy{Information Security}
+\setStudy{IT Security}
+% DEFAULT Template
+\setStudy{STUDY PROGRAM}
+
+% Set your type of thesis here!
+\setThesisType{Bachelorarbeit}
+\setThesisType{Bachelor thesis}
+\setThesisType{Diplomarbeit}
+\setThesisType{Diploma thesis}
+\setThesisType{Masterarbeit}
+\setThesisType{Master thesis}
+\setThesisType{TYPE OF THESIS}
 
 
-% Zusätzliche persönliche Latex-Definitionen
-%\newcommand{\ocat}{\textsf{OnionCat }}
-%\newcommand{\ocats}{\textsf{OnionCat}}
+\setDegree{Bachelor of Science in Engineering (BSc)}
+\setDegree{Diplom-Ingenieur/in}
+\setDegree{Master of Science in Engineering (MSc)}
+\setDegree{DEGREE}
 
-% Sprache auswählen
-%\newcommand{\lang}{\selectlanguage{english}}
+% Select the language here!
+% ngerman for german
+\selectlanguage{ngerman}
+% american for english
+\selectlanguage{american}
 

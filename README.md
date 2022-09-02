@@ -2,6 +2,9 @@
 
 This repository is for managing the FH Latex template for student theses.
 
+The output (generated PDF) is in the out directory.
+The authors only need to edit files in the user_data directory and add images, pictures and figures to the gfx directory.
+
 Important files and directories:
 - Directory gfx - pictures
 - Directory out - directory for building the PDF (also contains the temporary build files)
@@ -12,25 +15,28 @@ Important files and directories:
 - user_data/0_0_settings.tex - settings for the configuration of the document
 
 Settings:
-- isGerman: switches the language of the document to german (default: english)
-- isBakk: switches between Bachelorthesis and Diplomathesis
+- see user_data/0_0_settings.tex
+
+There are currently two methods of generating the PDF file:
+- Shellscript: ./make_paper.sh
+- Makefile: make
 
 
-# LIESMICH - Deutsch
+## Makefile usage under Windows
+In order to be able to use the Makefile if you are running Windows you need to install two things.
 
-Dieses Repositorium dient der Verwaltung der Latex-Vorlage für Studierendenabschlussarbeiten.
+The first is perl which is easily installed with the following link:
+- https://learn.perl.org/installing/windows.html
 
-Die folgende Liste stellt eine kurze Erklärung der wichtigen Ordner und Dateien dar.
-- Ordner gfx - Bilder
-- Ordner out - hier wird das generierte PDF und die dafür nötigen Daten abgelegt
-- Ordner static - beinhaltet Daten, die statisch sind und nicht geändert werden müssen
-- Ordner user_data - alle Dateien mit user-content
-- Makefile - generiert aus den einzelnen Dateien ein PDF (make  oder make clean)
-- 00_main.tex - main, die alle einzelnen user-Datein zusammen bindet
-- user_data/0_0_settings.tex - Einstellungen zum Dokument
+The second step is to get the "make" command for your windows Powershell. This is most easily done through chocolatey.
+With the following link you can easy install chocolatey.
+- https://chocolatey.org/install
 
-Einstellungsmöglichkeiten:
-- isGerman: Umschalten zwischen Deutsch und Englisch.
-- isBakk: Gibt an ob es sich um eine BAKK oder Diplomarbeit handelt.
-- Außerdem können hier der Titel, Betreuer und Autor geändert werden.
+After installing chocolatey simple run the command:
+'choco install make'
+in your Powershell.
+
+You can now use the command:
+'make -f .\Makefile'
+in your Powershell.
 

@@ -1,14 +1,14 @@
-\ifisGerman
-    \chapter{Stand der Forschung}
-\else
-    \chapter{Related Work}
-\fi
-\label{sec:relwork}
+\iflanguage{ngerman}{
+    \chapter{Stand der Forschung}\label{sec:relwork}
+}{}
+\iflanguage{american}{
+    \chapter{Related Work}\label{sec:relwork}
+}{}
 
 In \autoref{sec:relwork} ist der \nameref{sec:relwork} zu finden.
 
 
-\autoref{tab:passes_paperreading} shows hot to read \gls{it} papers.
+\Cref{tab:passes_paperreading} shows hot to read \gls{it} papers.
 
 \begin{table}[h]
 \centering
@@ -19,21 +19,19 @@ In \autoref{sec:relwork} ist der \nameref{sec:relwork} zu finden.
                            & section and sub-section header \\ \cline{2-2}
                            & conclusion \\ \cline{2-2}
                            & references \\ \hline
-    second & content, ignoring details (proofs,...) \\ \hline
+    second & content, ignoring details (proofs, \ldots{}) \\ \hline
     third & content in detail (re-implement paper) \\ \hline
 \end{tabular}
-\caption{Passes their content for reading a paper}
-\label{tab:passes_paperreading}
+\caption{Passes their content for reading a paper}\label{tab:passes_paperreading}
 \end{table}
 
 
-In \autoref{fig:fhlogo} kann das FH-Logo bestaunt werden.
+In \cref{fig:fhlogo} kann das FH-Logo bestaunt werden.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[scale=0.2]{gfx/fh_logo}
-    \caption{FH-Logo}
-    \label{fig:fhlogo}
+    \caption{FH-Logo}\label{fig:fhlogo}
 \end{figure}
 
 
@@ -43,16 +41,14 @@ Beispiele hierfür sind \autoref{fig:paperreading} und \autoref{fig:flow_mwissa}
 \begin{figure}[ht]
     \centering
     \input{gfx/pic_readingpapers}
-    \caption{Steps of the first pass when reading a research paper}
-    \label{fig:paperreading}
+    \caption{Steps of the first pass when reading a research paper}\label{fig:paperreading}
 \end{figure}
 
 
 \begin{figure}[ht]
     \centering
     \input{gfx/pic_flowmwissa}
-    \caption{Flussdiagram BAK1}
-    \label{fig:flow_mwissa}
+    \caption{Flussdiagram BAK1}\label{fig:flow_mwissa}
 \end{figure}
 
 Infos zu PGF/TikZ sind auf den folgenden Webseiten verfügbar:
@@ -64,22 +60,23 @@ Infos zu PGF/TikZ sind auf den folgenden Webseiten verfügbar:
 
 
 
-Das Halteproblem~\cite{turing_halting_prob} von \citeauthor{turing_halting_prob} kann im .bib file wie in \autoref{lstBibtex} gezeigt hinzugefügt werden und mit cite zitiert werden.
+The halting problem~\cite{turing_halting_prob} by \citeauthor{turing_halting_prob} is referenced here. It is in the .bib file as depicted by \cref{lst:bibtex}.
 
 
-
-\begin{lstlisting}[style=bibtexListing,label=lstBibtex,caption={BibTeX}]
+\begin{listing}[tbh]
+\caption{BibTeX entry for Turings halting problem.}\label{lst:bibtex}
+\begin{minted}{bibtex}
 @article{turing_halting_prob,
     author = {Turing, A. M.},
     title = {On Computable Numbers, with an Application to the Entscheidungsproblem},
+    year = {1937},
+    doi = {10.1112/plms/s2-42.1.230},
     journal = {Proceedings of the London Mathematical Society},
     volume = {s2-42},
     number = {1},
     publisher = {Oxford University Press},
     issn = {1460-244X},
-    url = {http://dx.doi.org/10.1112/plms/s2-42.1.230},
-    doi = {10.1112/plms/s2-42.1.230},
     pages = {230--265},
-    year = {1937}
 }
-\end{lstlisting}
+\end{minted}
+\end{listing}

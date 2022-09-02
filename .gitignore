@@ -1,4 +1,4 @@
-
+out/*
 # Latex build files #
 *.acn
 *.acr
@@ -13,8 +13,11 @@
 *.lol
 *.lot
 *.out
+*.out.ps
 *.run.xml
 *.toc
+*.tcp
+*.tps
 
 # Temporary files #
 *~
